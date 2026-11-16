@@ -1,0 +1,5 @@
+corner-radius = 0
+pressed-color = "#ff2a2a"
+selection-color = "#ffff00"
+pressed-fill-alpha = 0.35
+selection-fill-alpha = 0.25

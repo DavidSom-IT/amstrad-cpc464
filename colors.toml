@@ -1,0 +1,41 @@
+# Amstrad CPC 464 (CTM644 Color CRT + Locomotive BASIC + Colored Keycaps)
+mode = "dark"
+
+# Core Semantic Roles
+accent = "#ffff00"                # Locomotive BASIC Bright Yellow
+selection = "#002b80"             # High-contrast CRT Blue highlight
+muted = "#5c6a99"                 # Muted slate-blue for comments and dividers
+
+# Background Ramp (Darkest to Lightest)
+darker_background = "#000022"     # Deep CRT bezel shadow
+dark_background = "#000038"       # Status bar / panel surface
+background = "#000052"            # Classic CPC 464 Royal Blue screen (toned for daily readability)
+lighter_background = "#0a1970"    # Hover / elevated popup surface
+
+# Foreground Ramp (Darkest to Lightest)
+dark_foreground = "#8a99ad"       # Secondary / inactive text
+foreground = "#f2f27a"            # Comfortable warm yellow-cream for long reading
+light_foreground = "#ffff99"      # Emphasized text
+bright_foreground = "#ffff00"     # Pure CPC Ink 1 Yellow (also drives terminal cursor)
+
+# Standard 8-Bit Hardware Hues (Amstrad Gate Array mapped)
+red = "#e62e2e"                   # CPC Red keycaps (ESC / STOP)
+orange = "#ff8000"                # Gate Array Orange (Pen 15)
+yellow = "#ffff00"                # Gate Array Bright Yellow (Pen 24)
+green = "#00cc55"                 # CPC Green keycaps (SHIFT / COPY)
+cyan = "#00cccc"                  # Gate Array Cyan (Pen 20)
+blue = "#3377ff"                  # CPC Blue keycaps (ENTER / Numpad)
+magenta = "#cc33cc"               # Gate Array Magenta (Pen 7)
+brown = "#804000"                 # Gate Array Brown
+
+# Bright ANSI Hues
+bright_red = "#ff4d4d"            # Gate Array Bright Red
+bright_orange = "#ff9933"         # Gate Array Pastel Orange
+bright_yellow = "#ffff80"         # Gate Array Pastel Yellow
+bright_green = "#00ff66"          # Gate Array Sea Green
+bright_cyan = "#00ffff"           # Gate Array Bright Cyan
+bright_blue = "#6699ff"           # Gate Array Sky Blue
+bright_magenta = "#ff66ff"        # Gate Array Pastel Magenta
+
+# Hyprland Active Border (Red -> Green -> Blue CPC 464 Keycap Gradient)
+hyprland_active_border = "rgba(ff2a2aee) rgba(00cc55ee) rgba(2a6affee) 45deg"
