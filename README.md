@@ -42,6 +42,66 @@ fc-cache -f
 ```
 You can then select `CPC464` via `omarchy font set "CPC464"` or in your terminal configuration.
 
+### Optional: Locomotive BASIC 1.0 Startup Banner (`~/.bashrc`)
+
+If you want your terminal (**Foot**, **Ghostty**, **Alacritty**, or **Kitty**) to display the classic **1984 Locomotive BASIC 1.0 `Ready`** startup prompt whenever the **Amstrad CPC 464** theme is active—along with `clear` (keeps the header) and `cls` (wipes completely blank)—run this command to append the snippet to your `~/.bashrc`:
+
+```bash
+cat << 'EOF' >> ~/.bashrc
+
+# Amstrad CPC 464 Theme Startup Banner
+_amstrad_cpc464_banner() {
+    if [[ -r "/proc/$PPID/comm" && "$(< /proc/$PPID/comm)" == @(foot*|alacritty|kitty|ghostty) ]]; then
+        if [[ "$(cat ~/.local/state/omarchy/current/theme.name 2>/dev/null)" == "amstrad-cpc464" ]] || \
+           grep -q "Amstrad CPC 464" ~/.local/state/omarchy/current/theme/colors.toml 2>/dev/null; then
+            printf '\e[33m'
+            printf ' Amstrad 64K Microcomputer  (v1)\n\n'
+            printf ' ©1984 Amstrad Consumer Electronics plc\n'
+            printf '          and Locomotive Software Ltd.\n\n'
+            printf ' BASIC 1.0\n\n'
+            printf 'Ready\n'
+            printf '\e[0m'
+        fi
+    fi
+}
+
+clear() {
+    command clear "$@"
+    _amstrad_cpc464_banner
+}
+
+cls() {
+    command clear "$@"
+}
+
+_amstrad_cpc464_banner
+EOF
+source ~/.bashrc
+```
+
+### Optional: Auto-Launch Terminal on Boot (`~/.config/hypr/autostart.lua`)
+
+If you want Omarchy to boot straight into the `Ready` prompt whenever the **Amstrad CPC 464** theme is active (while leaving startup untouched for all other themes), run this command:
+
+```bash
+mkdir -p ~/.config/hypr
+if ! grep -Fq "BEGIN AMSTRAD CPC 464 AUTOSTART" ~/.config/hypr/autostart.lua 2>/dev/null; then
+  cat << 'EOF' >> ~/.config/hypr/autostart.lua
+
+-- BEGIN AMSTRAD CPC 464 AUTOSTART
+local f = io.open(os.getenv("HOME") .. "/.local/state/omarchy/current/theme.name", "r")
+if f then
+    local active_theme = f:read("*l")
+    f:close()
+    if active_theme == "amstrad-cpc464" then
+        o.launch_on_start("omarchy-launch-terminal")
+    end
+end
+-- END AMSTRAD CPC 464 AUTOSTART
+EOF
+fi
+```
+
 ---
 
 ## 📁 Repository Structure
