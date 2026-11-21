@@ -19,7 +19,7 @@ An authentic 8-bit retro theme for **Omarchy 4.5 (Quattro)** inspired by the ico
   * 45-degree **Red → Green → Blue** active window border gradient in Hyprland.
 * **Sharp 8-Bit UI Geometry (`shell.controls.toml`):** Zero corner radius (`corner-radius = 0`) across Quickshell surfaces with high-contrast red/yellow interactive highlights.
 * **Native Multi-Terminal Color Generation:** Automatically styles **Foot**, **Ghostty**, **Alacritty**, and **Kitty** directly from `colors.toml` when the theme is selected.
-- **Optional Pixel Font Included (`extras/CPC464.ttf`):** Ships the pixel-accurate 1984 **CPC464** TrueType font if you want to pair the color scheme with authentic 8-bit typography.
+- **Optional Pixel Font Included (`extras/CPC464-Mode1.ttf`):** Ships the pixel-accurate 1984 **CPC464** TrueType font if you want to pair the color scheme with authentic 8-bit typography.
 * **7 Curated Wallpapers (`backgrounds/`):** Cycle through custom Omarchy-styled Amstrad graphics, hardware photography, and Locomotive BASIC backdrops using `Super + Ctrl + Space`.
 
 ---
@@ -32,19 +32,22 @@ An authentic 8-bit retro theme for **Omarchy 4.5 (Quattro)** inspired by the ico
 omarchy theme install https://github.com/DavidSom-IT/amstrad-cpc464
 ```
 
-### Optional: Installing the `CPC464` Pixel Font
-If you would like to use the included 1984 Amstrad pixel font in your terminal:
+## 🕹️ Optional Retro Extras
+
+To recreate the full 1984 Amstrad CPC 464 startup experience, you can optionally add any of the following customizations:
+
+### 1. Install the `CPC464` Pixel Font
+Copy the included ROM-accurate font to your local fonts directory and refresh the cache:
 
 ```bash
 mkdir -p ~/.local/share/fonts
-cp ~/.config/omarchy/themes/amstrad-cpc464/extras/CPC464.ttf ~/.local/share/fonts/
+cp ~/.config/omarchy/themes/amstrad-cpc464/extras/CPC464-Mode1.ttf ~/.local/share/fonts/
 fc-cache -f
 ```
-You can then select `CPC464` via `omarchy font set "CPC464"` or in your terminal configuration.
+Then select `CPC464` via `omarchy font set "CPC464"` or in your terminal configuration.
 
-### Optional: Locomotive BASIC 1.0 Startup Banner (`~/.bashrc`)
-
-If you want your terminal (**Foot**, **Ghostty**, **Alacritty**, or **Kitty**) to display the classic **1984 Locomotive BASIC 1.0 `Ready`** startup prompt whenever the **Amstrad CPC 464** theme is active—along with `clear` (keeps the header) and `cls` (wipes completely blank)—run this command to append the snippet to your `~/.bashrc`:
+### 2. Locomotive BASIC 1.0 Startup Banner (`~/.bashrc`)
+Display the classic **1984 Locomotive BASIC 1.0 `Ready`** prompt in **Foot**, **Ghostty**, **Alacritty**, or **Kitty** whenever the **Amstrad CPC 464** theme is active (including `clear` to keep the header and `cls` to wipe completely blank):
 
 ```bash
 cat << 'EOF' >> ~/.bashrc
@@ -79,9 +82,8 @@ EOF
 source ~/.bashrc
 ```
 
-### Optional: Auto-Launch Terminal on Boot (`~/.config/hypr/autostart.lua`)
-
-If you want Omarchy to boot straight into the `Ready` prompt whenever the **Amstrad CPC 464** theme is active (while leaving startup untouched for all other themes), run this command:
+### 3. Auto-Launch Terminal on Boot (`~/.config/hypr/autostart.lua`)
+Boot straight into the `Ready` prompt whenever the **Amstrad CPC 464** theme is active, while leaving startup untouched for all other themes:
 
 ```bash
 mkdir -p ~/.config/hypr
@@ -110,7 +112,7 @@ fi
 amstrad-cpc464/
 ├── backgrounds/           # 7 Amstrad CPC 464 & Omarchy-styled wallpapers
 ├── extras/
-│   └── CPC464.ttf         # Amstrad CPC 464 pixel font
+│   └── CPC464-Mode1.ttf   # Amstrad CPC 464 pixel font
 ├── screenshots/           # Preview screenshots for README
 ├── colors.toml            # Gate Array & CTM644 CRT color definitions
 ├── icons.theme            # Yaru-yellow icon theme definition
