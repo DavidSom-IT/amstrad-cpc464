@@ -35,7 +35,6 @@ omarchy theme install https://github.com/DavidSom-IT/amstrad-cpc464
 ## 🕹️ Optional Retro Extras
 
 To recreate the full 1984 Amstrad CPC 464 startup experience, you can optionally add any of the following customizations:
-![Amstrad CPC 464 Locomotive BASIC Terminal](screenshots/terminal-retro.png)
 
 ### 1. Install the `CPC464` Pixel Font
 Copy the included ROM-accurate font to your local fonts directory and refresh the cache:
@@ -46,6 +45,8 @@ cp ~/.config/omarchy/themes/amstrad-cpc464/extras/CPC464-Mode1.ttf ~/.local/shar
 fc-cache -f
 ```
 Then select `CPC464` via `omarchy font set "CPC464"` or in your terminal configuration.
+
+![Amstrad CPC 464 Locomotive BASIC Terminal](screenshots/terminal-retro.png)
 
 ### 2. Locomotive BASIC 1.0 Startup Banner (`~/.bashrc`)
 Display the classic **1984 Locomotive BASIC 1.0 `Ready`** prompt in **Foot**, **Ghostty**, **Alacritty**, or **Kitty** whenever the **Amstrad CPC 464** theme is active (including `clear` to keep the header and `cls` to wipe completely blank):
