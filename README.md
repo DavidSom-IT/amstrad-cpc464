@@ -35,6 +35,7 @@ omarchy theme install https://github.com/DavidSom-IT/amstrad-cpc464
 ## 🕹️ Optional Retro Extras
 
 To recreate the full 1984 Amstrad CPC 464 startup experience, you can optionally add any of the following customizations:
+![Amstrad CPC 464 Locomotive BASIC Terminal](screenshots/terminal-retro.png)
 
 ### 1. Install the `CPC464` Pixel Font
 Copy the included ROM-accurate font to your local fonts directory and refresh the cache:
